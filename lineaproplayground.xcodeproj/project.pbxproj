@@ -13,6 +13,8 @@
 		8A7A9E26283F86BD001B0B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7A9E24283F86BD001B0B0C /* Main.storyboard */; };
 		8A7A9E28283F86BE001B0B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A7A9E27283F86BE001B0B0C /* Assets.xcassets */; };
 		8A7A9E2B283F86BE001B0B0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7A9E29283F86BE001B0B0C /* LaunchScreen.storyboard */; };
+		8A7A9E34283F8762001B0B0C /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7A9E33283F8762001B0B0C /* ExternalAccessory.framework */; };
+		8A7A9E37283F879C001B0B0C /* libdtdev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7A9E35283F879C001B0B0C /* libdtdev.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,9 @@
 		8A7A9E27283F86BE001B0B0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A7A9E2A283F86BE001B0B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A7A9E2C283F86BE001B0B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A7A9E33283F8762001B0B0C /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		8A7A9E35283F879C001B0B0C /* libdtdev.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libdtdev.a; sourceTree = "<group>"; };
+		8A7A9E36283F879C001B0B0C /* DTDevices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTDevices.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A7A9E34283F8762001B0B0C /* ExternalAccessory.framework in Frameworks */,
+				8A7A9E37283F879C001B0B0C /* libdtdev.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +47,11 @@
 		8A7A9E12283F86BD001B0B0C = {
 			isa = PBXGroup;
 			children = (
+				8A7A9E36283F879C001B0B0C /* DTDevices.h */,
+				8A7A9E35283F879C001B0B0C /* libdtdev.a */,
 				8A7A9E1D283F86BD001B0B0C /* lineaproplayground */,
 				8A7A9E1C283F86BD001B0B0C /* Products */,
+				8A7A9E32283F8762001B0B0C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +75,14 @@
 				8A7A9E2C283F86BE001B0B0C /* Info.plist */,
 			);
 			path = lineaproplayground;
+			sourceTree = "<group>";
+		};
+		8A7A9E32283F8762001B0B0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A9E33283F8762001B0B0C /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +218,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -216,7 +235,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -260,6 +279,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -270,7 +290,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -299,10 +319,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.home.lineaproplayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = DTDevices.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -327,10 +352,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.home.lineaproplayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = DTDevices.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
