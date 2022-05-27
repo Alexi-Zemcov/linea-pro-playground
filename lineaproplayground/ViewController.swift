@@ -47,10 +47,6 @@ class ViewController: UIViewController, DTDeviceDelegate {
          checkConnectionState()
      }
     func checkConnectionState(){
-        let variable = self.scanner.btConnectedDevices
-        
-        
-        
         if self.scanner.connstate == 2 {
             /*
                 CONNECTED
